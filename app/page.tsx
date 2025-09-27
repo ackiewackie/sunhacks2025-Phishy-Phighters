@@ -5,6 +5,18 @@ export default function Home() {
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
       <header className="flex flex-col items-center justify-center text-center py-16 px-6 bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
+                
+        {/* Phoenix Logo */}
+        <div className="relative w-40 h-40 mb-6">
+          <Image
+            src="/phoenix.png"
+            alt="Phoenix logo"
+            fill
+            className="object-contain drop-shadow-[0_0_20px_#ff521b]"
+            priority
+          />
+        </div>
+        
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-[#f2f3ae]">
           Rise Above Misinformation
         </h1>
