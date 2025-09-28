@@ -1,75 +1,40 @@
-// app/api/chat/route.ts
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
-/**
- * Helpful / defensive API route for debugging why Gemini calls fail.
- * - Retries once on transient failure
- * - Logs detailed error info to server logs (Vercel function logs)
- * - Returns a friendly reply + a debug error message (remove debug before production)
- */
 export async function POST(req: Request) {
-  const { message } = await req.json();
-
-  if (!message || typeof message !== "string") {
-    return NextResponse.json({ reply: "⚠️ No message provided." }, { status: 400 });
-  }
+  const { messages } = await req.json(); 
+  // 👆 instead of just { message }, expect an array of { role, text }
 
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    // attempt + one retry
-    let attempt = 0;
-    let lastErr: any = null;
-    while (attempt < 2) {
-      try {
-        // simplest stable form: pass a single string that includes system instructions
-        const prompt = `You are PhoenixAI, a friendly assistant that teaches users about phishing, misinformation, and safe browsing.
-Be concise, interactive, and educational. Use Markdown for clarity.
-
-User: ${message}`;
-
-        const result = await model.generateContent(prompt);
-
-        // result.response.text() should contain the text. Validate before returning.
-        const text = result?.response?.text?.();
-        if (text && text.trim().length > 0) {
-          return NextResponse.json({ reply: text });
-        } else {
-          // empty response — treat as an error and possibly retry
-          lastErr = new Error("Empty response from Gemini model");
-          attempt++;
-          continue;
-        }
-      } catch (err) {
-        lastErr = err;
-        // small wait before retry (helps with transient network auth issues)
-        await new Promise((r) => setTimeout(r, 300));
-        attempt++;
-      }
-    }
-
-    // If we got here, both attempts failed
-    console.error("Gemini API final error:", lastErr);
-
-    // Helpful debug returned to frontend while testing. Remove `debug` in prod.
-    return NextResponse.json(
+    // Convert history into Gemini format
+    const contents = [
       {
-        reply: "⚠️ Error talking to AI.",
-        debug: String(lastErr?.message ?? lastErr ?? "unknown error"),
+        role: "user",
+        parts: [
+          {
+            text: "You are PhoenixAI, a friendly assistant that teaches phishing, misinformation, and safe browsing. Stay in role. Use Markdown. Sometimes quiz the user interactively.",
+          },
+        ],
       },
-      { status: 502 }
-    );
+      ...messages.map((m: { role: string; text: string }) => ({
+        role: m.role === "user" ? "user" : "model",
+        parts: [{ text: m.text }],
+      })),
+    ];
+
+    const result = await model.generateContent({ contents });
+
+    const reply =
+      result.response.text() ||
+      "⚠️ I didn’t catch that. Can you rephrase your question?";
+
+    return NextResponse.json({ reply });
   } catch (err) {
-    console.error("Unexpected route error:", err);
-    return NextResponse.json(
-      {
-        reply: "⚠️ Unexpected server error.",
-        debug: String((err as any)?.message ?? err),
-      },
-      { status: 500 }
-    );
+    console.error("Gemini API error:", err);
+    return NextResponse.json({ reply: "⚠️ Error talking to AI." });
   }
 }
