@@ -21,7 +21,7 @@ export default function Home() {
           Rise Above Misinformation
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-[#f2f3ae]/90 max-w-2xl">
-          Learn how to spot phishing, misinformation, and online threats through interactive modules & quizzes.
+          Learn how to spot phishing, misinformation, and online threats through interactive AI powered learning.
         </p>
         <div className="mt-8 flex gap-4">
           <a
