@@ -30,7 +30,7 @@ export default function Home() {
           <div className="mt-6 flex justify-center gap-4">
             <a
               href="/chat"
-              className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+              className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
             >
               Start Learning
             </a>
@@ -111,6 +111,16 @@ export default function Home() {
             <p className="mt-6 font-semibold">
               With Phishy by your side, misinformation doesn’t stand a chance!
             </p>
+
+            {/* Extension button */}
+            <div className="mt-6">
+              <a
+                href="/about"
+                className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#fc9e4f] transition"
+              >
+                Add Extension
+              </a>
+            </div>
           </div>
         </section>
 
@@ -119,7 +129,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[#edd382] mb-8 text-center">
             Test Your Knowledge
           </h2>
-          <div className="bg-[#f2f3ae] text-[#020122] p-10 rounded-3xl shadow-lg text-center">
+          <div className="bg-[#edd382] text-[#020122] p-10 rounded-3xl shadow-lg text-center">
             <p className="text-lg font-medium mb-6">
               Can you outsmart the phishers? 🎣
             </p>
