@@ -60,7 +60,10 @@ export default function ChatPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center">
       {/* Header */}
-      <div className="w-full max-w-6xl flex items-center justify-center gap-3 py-4">
+      <Link
+        href="/"
+        className="w-full max-w-6xl flex items-center justify-center gap-3 py-4 cursor-pointer"
+      >
         <Image
           src="/phoenix.png"
           alt="PhoenixAI Logo"
@@ -71,7 +74,7 @@ export default function ChatPage() {
         <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
           PhoenixAI Chat
         </h1>
-      </div>
+      </Link>
 
       {/* Main content: chat + sidebar */}
       <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1">
