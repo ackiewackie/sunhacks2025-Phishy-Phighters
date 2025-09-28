@@ -134,7 +134,7 @@ export default function Home() {
               Can you outsmart the phishers? 🎣
             </p>
             <a
-              href="/quiz"
+              href="/chat"
               className="bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#fc9e4f] transition"
             >
               Learn with Phishy
