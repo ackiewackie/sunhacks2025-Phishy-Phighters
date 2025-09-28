@@ -30,7 +30,7 @@ export default function Home() {
           <div className="mt-6 flex justify-center gap-4">
             <a
               href="/chat"
-              className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+              className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
             >
               Start Learning
             </a>
