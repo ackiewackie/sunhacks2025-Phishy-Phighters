@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function ChatPage() {
   const [messages, setMessages] = useState<{ role: string; text: string }[]>([]);
@@ -59,7 +60,7 @@ export default function ChatPage() {
                 : "bg-white/90 text-[#020122] self-start"
             }`}
           >
-            {msg.text}
+            {msg.text}   // 👈 plain text right now
           </div>
         ))}
         {loading && (
