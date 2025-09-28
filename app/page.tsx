@@ -56,12 +56,6 @@ export default function Home() {
                 We’ll teach you how to identify suspicious links, urgent
                 messages, and common red flags.
               </p>
-              <a
-                href="/modules/phishing"
-                className="mt-4 inline-block text-sm font-semibold text-[#ff521b] hover:underline"
-              >
-                Start →
-              </a>
             </div>
 
             {/* Spotting Misinformation */}
@@ -72,12 +66,6 @@ export default function Home() {
                 avoid spreading misleading content. Critical thinking online
                 starts here.
               </p>
-              <a
-                href="/modules/misinformation"
-                className="mt-4 inline-block text-sm font-semibold text-[#ff521b] hover:underline"
-              >
-                Start →
-              </a>
             </div>
 
             {/* Safe Browsing */}
@@ -88,12 +76,6 @@ export default function Home() {
                 secure passwords, multi-factor authentication, and safe download
                 practices.
               </p>
-              <a
-                href="/modules/safe-browsing"
-                className="mt-4 inline-block text-sm font-semibold text-[#ff521b] hover:underline"
-              >
-                Start →
-              </a>
             </div>
           </div>
         </section>
@@ -111,7 +93,7 @@ export default function Home() {
               href="/quiz"
               className="bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#fc9e4f] transition"
             >
-              Take a Quiz Now
+              Try Out Phoenix AI 
             </a>
           </div>
         </section>
