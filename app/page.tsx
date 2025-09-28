@@ -40,8 +40,6 @@ export default function Home() {
       </div>
     </header>
 
-
-      {/* Rest of the page */}
       <main className="flex-1 px-6 sm:px-20 py-16 space-y-16">
         {/* Learning Modules Section */}
         <section id="modules">
