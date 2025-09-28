@@ -72,7 +72,7 @@ export default function ChatPage() {
           className="drop-shadow-lg"
         />
         <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
-          Phishie's Phishing Phood
+          Phishy's Phishing School
         </h1>
       </Link>
 
