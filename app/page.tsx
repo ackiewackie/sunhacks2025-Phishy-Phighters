@@ -25,19 +25,13 @@ export default function Home() {
         </p>
         <div className="mt-8 flex gap-4">
           <a
-            href="/modules"
-            className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] hover:text-[#020122] transition"
-          >
-            Start Learning
-          </a>
-          <a
             href="/chat"
             className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
           >
-            Take a Quiz
+            Start Learning
           </a>
            <a
-            href="https://chromewebstore.google.com/"
+            href="/about"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#fc9e4f] transition"
