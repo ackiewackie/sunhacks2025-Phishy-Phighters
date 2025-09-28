@@ -16,7 +16,7 @@ export default function Home() {
         <div className="bg-[#020122] py-6">
           <div className="relative w-48 h-48 mx-auto">
             <Image
-              src="/phishy.png" // replace with your fish logo
+              src="/phish.png" // replace with your fish logo
               alt="Phishy the Fish Logo"
               fill
               className="object-contain drop-shadow-[0_0_15px_#ff521b]"
