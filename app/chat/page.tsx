@@ -78,7 +78,7 @@ export default function ChatPage() {
         </div>
       </header>
 
-      {/* Optional subheading (centered, like hero tagline) */}
+      {/* Optional subheading */}
       <div className="text-center mt-6 px-4">
         <h2 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
           Phishy’s Phishing School
@@ -86,7 +86,7 @@ export default function ChatPage() {
       </div>
 
       {/* Main content: chat + sidebar */}
-      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1 mt-6">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1 mt-6">
         {/* Chat Section */}
         <div className="flex-1 flex flex-col bg-[#edd382] text-[#020122] rounded-xl shadow-lg overflow-hidden">
           <div
