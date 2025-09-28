@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Tagline + Buttons (centered under brand row) */}
+        {/* Tagline + Buttons */}
         <div className="text-center px-6 py-10">
           <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
             Swim Smarter, Click Safer
@@ -56,7 +56,6 @@ export default function Home() {
           </p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Phishing Basics */}
             <div className="bg-[#edd382] text-[#020122] p-6 rounded-2xl shadow-lg hover:scale-105 transition">
               <h3 className="font-bold text-xl mb-2">Phishing Basics</h3>
               <p className="text-sm text-[#020122]/80">
@@ -66,7 +65,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Spotting Misinformation */}
             <div className="bg-[#edd382] text-[#020122] p-6 rounded-2xl shadow-lg hover:scale-105 transition">
               <h3 className="font-bold text-xl mb-2">Spotting Misinformation</h3>
               <p className="text-sm text-[#020122]/80">
@@ -75,7 +73,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Safe Browsing */}
             <div className="bg-[#edd382] text-[#020122] p-6 rounded-2xl shadow-lg hover:scale-105 transition">
               <h3 className="font-bold text-xl mb-2">Safe Browsing</h3>
               <p className="text-sm text-[#020122]/80">
@@ -83,6 +80,37 @@ export default function Home() {
                 secure passwords, multi-factor authentication, and safe download practices.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Extension Section */}
+        <section id="extension">
+          <h2 className="text-3xl font-bold text-[#edd382] mb-6 text-center">
+            Introducing Phishy Waters
+          </h2>
+          <div className="bg-[#f2f3ae] text-[#020122] p-10 rounded-3xl shadow-lg text-center max-w-3xl mx-auto">
+            <p className="text-lg mb-4">
+              Phishy Waters is our browser extension designed to help you
+              navigate the web more safely.
+            </p>
+            <ul className="list-disc list-inside text-left text-[#020122]/90 space-y-2 max-w-xl mx-auto">
+              <li>
+                Scans the text of social media pages (currently supports{" "}
+                <strong>Reddit</strong>).
+              </li>
+              <li>
+                Cross-checks claims against a trusted fact-checker database.
+              </li>
+              <li>
+                Flags suspicious or unsafe links before you click.
+              </li>
+              <li>
+                Lets you know if a claim has already been proven false.
+              </li>
+            </ul>
+            <p className="mt-6 font-semibold">
+              With Phishy by your side, misinformation doesn’t stand a chance!
+            </p>
           </div>
         </section>
 
