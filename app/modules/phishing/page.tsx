@@ -102,7 +102,7 @@ export default function PhishingBasics() {
 
       {/* Footer */}
       <footer className="bg-[#020122] border-t border-[#edd382]/30 py-6 text-center text-sm text-[#edd382]">
-        <p>© 2025 Phishy Phighters — Built at SunHacks</p>
+        <p>Phishy Phighters — Built at SunHacks</p>
       </footer>
     </div>
   );
