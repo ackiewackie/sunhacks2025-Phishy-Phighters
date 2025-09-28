@@ -8,7 +8,7 @@ export default function Home() {
         {/* Nav-style brand row */}
         <div className="flex items-center gap-4 px-6 py-4">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f2f3ae] tracking-wide">
-            Phishing Phighters
+            Phishy Phighters
           </h1>
           <div className="relative w-20 h-20">
             <Image
