@@ -57,6 +57,10 @@ export default function ChatPage() {
   };
 
   return (
+    <Head>
+        <title>Phishy Phighters</title>
+        <meta name="description" content="Learn about Phishy Phighters, your guide to safe browsing." />
+    </Head>
     <div className="font-sans min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col">
       {/* Header (matches homepage) */}
       <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
