@@ -4,44 +4,40 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
-      <header>
+      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg text-center flex flex-col items-center">
         {/* Brand + Logo */}
-        <div className="bg-[#020122] flex flex-col items-center justify-center py-8">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4">
-            Phishing Phighters
-          </h1>
-          <div className="relative w-32 h-32">
-            <Image
-              src="/phish.png" // replace with your fish logo
-              alt="Phishy the Fish Logo"
-              fill
-              className="object-contain drop-shadow-[0_0_12px_#ff521b]"
-              priority
-            />
-          </div>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4">
+          Phishing Phighters
+        </h1>
+        <div className="relative w-32 h-32 mb-6">
+          <Image
+            src="/phish.png" // your Phishy logo
+            alt="Phishy the Fish Logo"
+            fill
+            className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
+            priority
+          />
         </div>
 
-        {/* Gradient Tagline Section */}
-        <div className="w-full bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg text-center">
-          <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
-            Swim Smarter, Click Safer — Let Phishy guide you to spot scams and
-            fight misinformation!
-          </p>
+        {/* Tagline + Buttons */}
+        <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
+          Swim Smarter, Click Safer — Let Phishy guide you to spot scams and
+          fight misinformation!
+        </p>
 
-          <div className="mt-6 flex justify-center gap-4">
-            <a
-              href="/chat"
-              className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
-            >
-              Start Learning
-            </a>
-            <a
-              href="/about"
-              className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
-            >
-              Add Extension
-            </a>
-          </div>
+        <div className="mt-6 flex justify-center gap-4">
+          <a
+            href="/chat"
+            className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+          >
+            Start Learning
+          </a>
+          <a
+            href="/about"
+            className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
+          >
+            Add Extension
+          </a>
         </div>
       </header>
 
