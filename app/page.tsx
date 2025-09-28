@@ -4,46 +4,54 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
-      <header className="flex flex-col items-center justify-center text-center py-16 px-6 bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
-        
-        {/* Phishy the Fish Logo */}
-        <div className="relative w-40 h-40 mb-6">
-          <Image
-            src="/phish.png" // 👈 replace with your fish logo file
-            alt="Phishy the Fish Logo"
-            fill
-            className="object-contain drop-shadow-[0_0_20px_#ff521b]"
-            priority
-          />
+      <header className="flex flex-col items-center text-center">
+        {/* Brand Name */}
+        <div className="w-full bg-[#020122] py-8">
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-[#f2f3ae] tracking-wide">
+            Phishing Phighters
+          </h1>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-[#f2f3ae]">
-          Phishing Phighters: Swim Smarter, Click Safer
-        </h1>
-        <p className="mt-4 text-lg sm:text-xl text-[#f2f3ae]/90 max-w-2xl">
-          Meet Phishy 🐟 — your guide to spotting scams, fighting misinformation, 
-          and surfing the web safely through interactive lessons and quizzes.
-        </p>
+        {/* Phishy Logo */}
+        <div className="bg-[#020122] py-6">
+          <div className="relative w-48 h-48 mx-auto">
+            <Image
+              src="/phishy.png" // replace with your fish logo
+              alt="Phishy the Fish Logo"
+              fill
+              className="object-contain drop-shadow-[0_0_15px_#ff521b]"
+              priority
+            />
+          </div>
+        </div>
 
-        <div className="mt-8 flex gap-4">
-          <a
-            href="/chat"
-            className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
-          >
-            Start Learning
-          </a>
-          <a
-            href="/about"
-            className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#fc9e4f] transition"
-          >
-            Add Extension
-          </a>
+        {/* Gradient Tagline Section */}
+        <div className="w-full bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-16 px-6 rounded-b-3xl shadow-lg">
+          <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
+            Swim Smarter, Click Safer — Learn how to outsmart scammers with
+            Phishy as your guide!
+          </p>
+
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="/chat"
+              className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+            >
+              Start Learning
+            </a>
+            <a
+              href="/about"
+              className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
+            >
+              Add Extension
+            </a>
+          </div>
         </div>
       </header>
 
-      {/* Learning Modules Section */}
+      {/* Rest of the page */}
       <main className="flex-1 px-6 sm:px-20 py-16 space-y-16">
+        {/* Learning Modules Section */}
         <section id="modules">
           <h2 className="text-3xl font-bold text-[#edd382] mb-8 text-center">
             Interactive Learning Modules
@@ -92,7 +100,7 @@ export default function Home() {
               href="/quiz"
               className="bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#fc9e4f] transition"
             >
-              Learn with Phishy
+              Quiz with Phishy
             </a>
           </div>
         </section>
@@ -100,7 +108,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#020122] border-t border-[#edd382]/30 py-6 text-center text-sm text-[#edd382]">
-        <p>Phishing Phighters — School of Phishes 🐟</p>
+        <p>© 2025 Phishing Phighters — Guided by Phishy 🐟</p>
       </footer>
     </div>
   );
