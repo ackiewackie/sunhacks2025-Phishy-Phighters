@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Phishy Phighters",
   description: "Swim Smarter, Click Safer",
+  icons: {
+    icon: "/phish.png", 
+  },
 };
 
 export default function RootLayout({
