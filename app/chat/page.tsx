@@ -14,7 +14,7 @@ export default function ChatPage() {
     setMessages([
       {
         role: "ai",
-        text: "Hi, I’m Phishie! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
+        text: "Hi, I’m Phishy! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
       },
     ]);
   }, []);
@@ -72,7 +72,7 @@ export default function ChatPage() {
           className="drop-shadow-lg"
         />
         <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
-          Phishie Pheeds
+          Phishie's Phishing Phood
         </h1>
       </Link>
 
