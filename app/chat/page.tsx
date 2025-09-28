@@ -7,7 +7,7 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ✅ Initial welcome message from PhoenixAI
+  // Initial welcome message from PhoenixAI
   useEffect(() => {
     setMessages([
       {
@@ -60,7 +60,7 @@ export default function ChatPage() {
                 : "bg-white/90 text-[#020122] self-start"
             }`}
           >
-            {msg.text}   // 👈 plain text right now
+            {msg.text}   
           </div>
         ))}
         {loading && (
