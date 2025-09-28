@@ -14,7 +14,7 @@ export default function ChatPage() {
     setMessages([
       {
         role: "ai",
-        text: "Hi, I’m PhoenixAI! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
+        text: "Hi, I’m Phishie! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
       },
     ]);
   }, []);
@@ -65,14 +65,14 @@ export default function ChatPage() {
         className="w-full max-w-6xl flex items-center justify-center gap-3 py-4 cursor-pointer"
       >
         <Image
-          src="/phoenix.png"
-          alt="PhoenixAI Logo"
+          src="/phish.png"
+          alt="Phish Logo"
           width={60}
           height={60}
           className="drop-shadow-lg"
         />
         <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
-          PhoenixAI Chat
+          Phishie Pheeds
         </h1>
       </Link>
 
