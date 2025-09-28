@@ -37,7 +37,7 @@ export default function Home() {
             Take a Quiz
           </a>
            <a
-            href="#"  {/* replace with real Chrome/Firefox extension store link */}
+            href="https://chromewebstore.google.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#ff521b] text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#fc9e4f] transition"
