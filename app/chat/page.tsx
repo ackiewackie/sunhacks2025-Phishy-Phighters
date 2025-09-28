@@ -14,7 +14,7 @@ export default function ChatPage() {
     setMessages([
       {
         role: "ai",
-        text: "👋 Hi, I’m PhoenixAI! I can help you learn about phishing, misinformation, and safe browsing. What would you like to know?",
+        text: "Hi, I’m PhoenixAI! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
       },
     ]);
   }, []);
@@ -127,7 +127,7 @@ export default function ChatPage() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               className="flex-1 px-4 py-2 rounded-lg bg-white text-[#020122] focus:outline-none"
-              placeholder="Ask me about phishing, misinformation, or safe browsing..."
+              placeholder=""
             />
             <button
               onClick={sendMessage}
