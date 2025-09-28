@@ -26,20 +26,19 @@ export default function PhishingBasics() {
       </header>
 
       {/* Hero Section */}
-      <div className="text-center py-12 px-6 bg-[#020122]">
+      <div className="text-center py-8 px-6 bg-[#020122]">
         <h1 className="text-4xl sm:text-5xl font-bold text-[#f2f3ae]">
           Phishing Basics
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto text-[#f2f3ae]/90">
-          Learn how to recognize and defend against one of the most common
-          online threats: phishing.
+          How can we avoid being baited?
         </p>
       </div>
 
       {/* Content Section */}
       <main className="flex-1 px-6 sm:px-20 py-16 space-y-12">
         {/* What is phishing */}
-        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">What is Phishing?</h2>
           <p className="leading-relaxed">
             Phishing is a type of cyberattack where attackers impersonate
@@ -49,38 +48,39 @@ export default function PhishingBasics() {
             text messages.
           </p>
         </section>
-
+        
         {/* Common examples */}
-        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8">
+        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Common Examples</h2>
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside space-y-2 text-left inline-block">
             <li>Emails claiming your account will be locked unless you act immediately.</li>
             <li>Fake login pages that mimic trusted websites like banks or email providers.</li>
             <li>Messages offering free prizes, gift cards, or urgent updates.</li>
           </ul>
         </section>
-
+        
         {/* Red flags */}
-        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Red Flags to Watch For</h2>
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside space-y-2 text-left inline-block">
             <li>Misspelled domain names or sender addresses.</li>
             <li>Unusual urgency (“Act now or lose access!”).</li>
             <li>Unexpected attachments or suspicious links.</li>
             <li>Generic greetings like “Dear Customer” instead of your name.</li>
           </ul>
         </section>
-
+        
         {/* How to protect yourself */}
-        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8">
+        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">How to Protect Yourself</h2>
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside space-y-2 text-left inline-block">
             <li>Double-check the sender’s email address and URL.</li>
             <li>Hover over links before clicking to see where they lead.</li>
             <li>Enable multi-factor authentication on important accounts.</li>
             <li>Report suspicious emails to your IT department or provider.</li>
           </ul>
         </section>
+
 
         {/* Quiz Section */}
         <section id="quiz" className="max-w-4xl mx-auto">
