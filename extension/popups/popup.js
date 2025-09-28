@@ -19,6 +19,7 @@ function extractKeywords(text) {
 }
 
 /**
+
  * Calls the Fact Check API with a query string.
  * @param {string} q The query string to search for.
  */
@@ -28,7 +29,7 @@ async function search(q) {
     return;
   }
   try {
-    const API_KEY = import.meta.env.VITE_FACT_CHECK_API_KEY;
+    const API_KEY = "AIzaSyAJydyhjVDgJzGEjOxXFPCeBUKJVhunVLQ"; // !!! IMPORTANT: Add your key here
     const params = { languageCode: 'en', key: API_KEY, query: q };
     const baseUrl = 'https://factchecktools.googleapis.com/v1alpha1/claims:search';
     const queryParams = new URLSearchParams(params);
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const API_KEY = import.meta.env.VITE_SAFE_BROWSING_API_KEY;
+    const API_KEY = 'AIzaSyBk-tnCyhSJVqxluvCpSpSuT7jehZGA8gI';
 
     async function checkUrlSafety(urls) {
         const apiUrl = `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${API_KEY}`;
@@ -203,4 +204,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
