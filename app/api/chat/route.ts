@@ -9,26 +9,13 @@ export async function POST(req: Request) {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const result = await model.generateContent({
-      contents: [
-        {
-          role: "system",
-          parts: [
-            {
-              text: "You are PhoenixAI, a friendly assistant that only teaches users about phishing, misinformation, and safe browsing. Be concise, interactive, and educational. Use Markdown (bold, lists, headings) to make explanations clearer.",
-            },
-          ],
-        },
-        {
-          role: "user",
-          parts: [{ text: message }],
-        },
-      ],
-      generationConfig: {
-        maxOutputTokens: 500,
-        temperature: 0.7,
-      },
-    });
+    // ✅ System prompt + user message combined
+    const result = await model.generateContent(
+      `You are PhoenixAI, a friendly assistant that teaches users about phishing, misinformation, and safe browsing.
+      Be concise, interactive, and educational. Use Markdown for clarity.
+
+      User: ${message}`
+    );
 
     const reply =
       result.response.text() ||
