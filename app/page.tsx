@@ -2,6 +2,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
+    <Head>
+        <title>Phishy Phighters</title>
+        <meta name="description" content="Learn about Phishy Phighters, your guide to safe browsing." />
+    </Head>
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
       <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
