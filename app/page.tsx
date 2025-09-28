@@ -4,34 +4,31 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
-      <header className="flex flex-col items-center text-center">
-        {/* Brand Name */}
-        <div className="w-full bg-[#020122] py-8">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-[#f2f3ae] tracking-wide">
+      <header>
+        {/* Brand + Logo */}
+        <div className="bg-[#020122] flex flex-col items-center justify-center py-8">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4">
             Phishing Phighters
           </h1>
-        </div>
-
-        {/* Phishy Logo */}
-        <div className="bg-[#020122] py-6">
-          <div className="relative w-48 h-48 mx-auto">
+          <div className="relative w-32 h-32">
             <Image
-              src="/phish.png" // replace with your fish logo
+              src="/phishy.png" // replace with your fish logo
               alt="Phishy the Fish Logo"
               fill
-              className="object-contain drop-shadow-[0_0_15px_#ff521b]"
+              className="object-contain drop-shadow-[0_0_12px_#ff521b]"
               priority
             />
           </div>
         </div>
 
         {/* Gradient Tagline Section */}
-        <div className="w-full bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-16 px-6 rounded-b-3xl shadow-lg">
+        <div className="w-full bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg text-center">
           <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
-            Swim Smarter, Click Safer
+            Swim Smarter, Click Safer — Let Phishy guide you to spot scams and
+            fight misinformation!
           </p>
 
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-6 flex justify-center gap-4">
             <a
               href="/chat"
               className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
