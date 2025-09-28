@@ -7,20 +7,22 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center px-6 py-12">
       {/* Header */}
       <Link href="/" className="max-w-4xl text-center mb-12 block cursor-pointer">
-        <Image
-          src="/phoenix.png"
-          alt="PhoenixGuard Logo"
-          width={80}
-          height={80}
-          className="mx-auto drop-shadow-lg"
-        />
-        <h1 className="text-4xl font-extrabold text-[#f2f3ae] mt-4 hover:underline">
-          PhoenixGuard
-        </h1>
-        <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-          Keeping you safe online by teaching, detecting, and providing resources
-          against misinformation and phishing threats.
-        </p>
+        <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
+          <div className="flex items-center gap-4 px-6 py-4">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f2f3ae] tracking-wide">
+              Phishy Phighters
+            </h1>
+            <div className="relative w-20 h-20">
+              <Image
+                src="/phish.png"
+                alt="Phishy the Fish Logo"
+                fill
+                className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
+                priority
+              />
+            </div>
+          </div>
+        </header>
       </Link>
       
         <h1 className="text-4xl font-extrabold text-[#f2f3ae] mt-4 hover:underline">
