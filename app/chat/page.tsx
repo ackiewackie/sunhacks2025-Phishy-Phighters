@@ -14,7 +14,7 @@ export default function ChatPage() {
     setMessages([
       {
         role: "ai",
-        text: "Hi, I’m Phishy! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first? ",
+        text: "Hi, I’m Phishy! I’ll guide you through learning about phishing, misinformation, and safe browsing by asking you short questions. Don’t worry if you get one wrong I’ll explain and help you out. Which topic would you like to start with first?",
       },
     ]);
   }, []);
@@ -26,7 +26,6 @@ export default function ChatPage() {
     });
   }, [messages, loading]);
 
-  // ✅ Updated sendMessage with full history
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -38,7 +37,7 @@ export default function ChatPage() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newMessages }), // send full history
+        body: JSON.stringify({ messages: newMessages }),
       });
 
       const data = await res.json();
@@ -58,11 +57,11 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center">
-      {/* Header */}
+    <div className="font-sans min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col">
+      {/* Header (matches homepage) */}
       <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
-        <Link href="/" className="block cursor-pointer">
-          <div className="flex items-center gap-4 px-6 py-4">
+        <div className="flex items-center gap-4 px-6 py-4">
+          <Link href="/" className="flex items-center gap-4 cursor-pointer">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f2f3ae] tracking-wide">
               Phishy Phighters
             </h1>
@@ -75,28 +74,24 @@ export default function ChatPage() {
                 priority
               />
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </header>
-      
-      <Image
-        src="/phish.png"
-        alt="Phish Logo"
-        width={60}
-        height={60}
-        className="drop-shadow-lg"
-      />
-      <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
-        Phishy's Phishing School
-      </h1>
+
+      {/* Optional subheading (centered, like hero tagline) */}
+      <div className="text-center mt-6 px-4">
+        <h2 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
+          Phishy’s Phishing School
+        </h2>
+      </div>
 
       {/* Main content: chat + sidebar */}
-      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1">
+      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1 mt-6">
         {/* Chat Section */}
         <div className="flex-1 flex flex-col bg-[#edd382] text-[#020122] rounded-xl shadow-lg overflow-hidden">
           <div
             ref={chatRef}
-            className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto max-h-[500px]" 
+            className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto max-h-[500px]"
           >
             {messages.map((msg, i) => (
               <div
@@ -105,7 +100,6 @@ export default function ChatPage() {
                   msg.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                {/* Phoenix avatar for AI */}
                 {msg.role === "ai" && (
                   <div className="w-8 h-8 rounded-full bg-[#020122] shadow-md overflow-hidden flex items-center justify-center">
                     <Image
@@ -117,8 +111,6 @@ export default function ChatPage() {
                     />
                   </div>
                 )}
-
-                {/* Chat bubble */}
                 <div
                   className={`px-4 py-3 max-w-[75%] rounded-2xl shadow ${
                     msg.role === "user"
@@ -144,7 +136,7 @@ export default function ChatPage() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               className="flex-1 px-4 py-2 rounded-lg bg-white text-[#020122] focus:outline-none"
-              placeholder=""
+              placeholder="Type your message..."
             />
             <button
               onClick={sendMessage}
@@ -168,10 +160,7 @@ export default function ChatPage() {
           <h2 className="text-lg font-semibold text-[#f2f3ae] mt-4">📚 Resources</h2>
           <ul className="text-sm space-y-2">
             <li>
-              <a
-                href="/modules/phishing"
-                className="text-[#fc9e4f] hover:underline"
-              >
+              <a href="/modules/phishing" className="text-[#fc9e4f] hover:underline">
                 Phishing Basics Module
               </a>
             </li>
