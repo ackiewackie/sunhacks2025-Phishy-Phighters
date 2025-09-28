@@ -43,7 +43,7 @@ export default function ChatPage() {
       const data = await res.json();
       if (data.reply) {
         setMessages((prev) => [...prev, { role: "ai", text: data.reply }]);
-      }
+      } 
     } catch (err) {
       console.error("Chat error:", err);
       setMessages((prev) => [
