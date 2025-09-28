@@ -38,7 +38,7 @@ export default function AboutPage() {
       {/* Main Content */}
       <main className=" text-centerflex-1 px-6 sm:px-20 py-16 space-y-16">
         {/* What it does */}
-        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6 text-center">
           <h2 className="text-3xl font-bold">What Does It Do?</h2>
           <p className="text-lg">
             Phishy Waters gives you control with a simple toggle, request help from Phishy
@@ -46,21 +46,13 @@ export default function AboutPage() {
             content of any webpage you visit and highlights possible phishing
             attempts or misinformation in <strong>real time</strong>.
           </p>
-          <div className="relative w-full max-w-md h-64 mx-auto">
-            <Image
-              src="/phish.png" // replace with extension mockup later
-              alt="Phishy Waters illustration"
-              fill
-              className="object-contain drop-shadow-[0_0_20px_#020122]"
-            />
-          </div>
         </section>
-
+        
         {/* Why it’s different */}
-        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6 text-center">
           <h2 className="text-3xl font-bold">Learn As You Go</h2>
           <p className="text-lg">
-            Our goal isn’t just to <em>flag content</em>. Phishy  also
+            Our goal isn’t just to <em>flag content</em>. Phishy also
             explains <strong>why</strong> something is dangerous. By giving you
             quick, clear context, we help you build safer browsing habits that
             last a lifetime.
