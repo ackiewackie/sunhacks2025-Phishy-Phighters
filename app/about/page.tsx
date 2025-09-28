@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col">
       {/* Header */}
-      <Link href="/" className="max-w-4xl text-center mb-12 block cursor-pointer">
-        <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
+      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
+        <Link href="/" className="block cursor-pointer">
           <div className="flex items-center gap-4 px-6 py-4">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f2f3ae] tracking-wide">
               Phishy Phighters
@@ -22,87 +22,74 @@ export default function AboutPage() {
               />
             </div>
           </div>
-        </header>
-      </Link>
-      
-        <h1 className="text-4xl font-extrabold text-[#f2f3ae] mt-4 hover:underline">
+        </Link>
+      </header>
+
+      {/* Hero Text */}
+      <div className="text-center mt-8 px-6">
+        <h1 className="text-4xl font-extrabold text-[#f2f3ae] hover:underline">
           Phishy Waters
         </h1>
         <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-          Helping you spot misinformation and phishing attempts in real time —
-          while teaching you how to stay safe online.
+          Helping you spot misinformation and phishing attempts in real time
+          while teaching you how to swim safe online.
         </p>
+      </div>
 
-      {/* How it works */}
-      <div className="max-w-4xl bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-8 space-y-6 mb-12">
-        <h2 className="text-2xl font-bold">🔍 How It Works</h2>
-        <p>
-          The <span className="font-semibold">Phishy Waters</span> extension lets
-          you toggle protection on or off. When enabled, it scans the content of
-          any webpage you visit and highlights possible misinformation or phishing
-          attempts in real time.
-        </p>
-        <p>
-          Our goal isn’t just to flag content — Phishy Waters also{" "}
-          <span className="font-semibold">teaches you why</span> something is
-          dangerous, so you can build safer browsing habits that last a lifetime.
-        </p>
+      {/* Main Content */}
+      <main className="flex-1 px-6 sm:px-20 py-16 space-y-16">
+        {/* What it does */}
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6">
+          <h2 className="text-3xl font-bold">What Does It Do?</h2>
+          <p className="text-lg">
+            Phishy Waters gives you control with a simple toggle, request help from Phishy
+            whenever you like by switching it on or off. When enabled, he scans the
+            content of any webpage you visit and highlights possible phishing
+            attempts or misinformation in <strong>real time</strong>.
+          </p>
+          <div className="relative w-full max-w-md h-64 mx-auto">
+            <Image
+              src="/phish.png" // replace with extension mockup later
+              alt="Phishy Waters illustration"
+              fill
+              className="object-contain drop-shadow-[0_0_20px_#020122]"
+            />
+          </div>
+        </section>
 
-        {/* CTA */}
-        <div className="flex justify-center mt-6">
+        {/* Why it’s different */}
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6">
+          <h2 className="text-3xl font-bold">Learn As You Go</h2>
+          <p className="text-lg">
+            Our goal isn’t just to <em>flag content</em>. Phishy  also
+            explains <strong>why</strong> something is dangerous. By giving you
+            quick, clear context, we help you build safer browsing habits that
+            last a lifetime.
+          </p>
+        </section>
+
+        {/* Call to Action */}
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6 text-center">
+          <h2 className="text-3xl font-bold">Get Started</h2>
+          <p className="text-lg">
+            Add Phishy Waters to your browser and stay one step ahead of
+            phishermen.
+          </p>
           <a
-            href="https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID"
+            href="https://chromewebstore.google.com/" // replace with actual extension link
             target="_blank"
-            className="bg-[#ff521b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#fc9e4f] transition shadow"
+            rel="noopener noreferrer"
+            className="inline-block bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-[#fc9e4f] transition"
           >
-            🚀 Add to Chrome
+            ➕ Add to Chrome
           </a>
-        </div>
-      </div>
+        </section>
+      </main>
 
-      {/* Mission box */}
-      <div className="max-w-4xl bg-white/10 rounded-3xl shadow-lg p-8 text-center space-y-6 mb-12">
-        <h2 className="text-2xl font-bold text-[#f2f3ae]">🌍 Our Mission</h2>
-        <p className="text-gray-200">
-          Phishy Waters is part of the greater{" "}
-          <span className="font-semibold">Phishing Phighters</span> initiative:  
-          using technology to empower safe digital citizens. We believe online
-          safety comes from both <span className="font-semibold">protection</span>{" "}
-          and <span className="font-semibold">education</span>.
-        </p>
-      </div>
-
-      {/* Features box grid */}
-      <div className="max-w-4xl grid md:grid-cols-3 gap-6 mb-12">
-        <div className="bg-[#edd382] text-[#020122] rounded-2xl p-6 shadow">
-          <h3 className="font-semibold text-lg">📖 Learn</h3>
-          <p className="text-sm mt-2">
-            Explore tips and modules on phishing, scams, and misinformation.
-          </p>
-        </div>
-        <div className="bg-[#edd382] text-[#020122] rounded-2xl p-6 shadow">
-          <h3 className="font-semibold text-lg">🛡 Protect</h3>
-          <p className="text-sm mt-2">
-            Scan your pages with Phishy Waters for instant threat detection.
-          </p>
-        </div>
-        <div className="bg-[#edd382] text-[#020122] rounded-2xl p-6 shadow">
-          <h3 className="font-semibold text-lg">🌱 Grow</h3>
-          <p className="text-sm mt-2">
-            Build lifelong safe browsing skills with our guided resources.
-          </p>
-        </div>
-      </div>
-
-      {/* Back home */}
-      <div className="mt-6">
-        <Link
-          href="/"
-          className="text-center bg-[#ff521b] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#fc9e4f] transition shadow"
-        >
-          ⬅ Back to Home
-        </Link>
-      </div>
+      {/* Footer */}
+      <footer className="bg-[#020122] border-t border-[#edd382]/30 py-6 text-center text-sm text-[#edd382]">
+        <p>Phishy Waters - Phishy Phighters</p>
+      </footer>
     </div>
   );
 }
