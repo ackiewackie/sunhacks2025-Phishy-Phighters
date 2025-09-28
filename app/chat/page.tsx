@@ -87,13 +87,13 @@ export default function ChatPage() {
               >
                 {/* Phoenix avatar for AI */}
                 {msg.role === "ai" && (
-                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#020122] shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-[#020122] shadow-md overflow-hidden flex items-center justify-center">
                     <Image
                       src="/phoenix.png"
                       alt="PhoenixAI"
-                      width={20}
-                      height={20}
-                      className="rounded-full"
+                      width={40}
+                      height={40}
+                      className="object-cover object-top"
                     />
                   </div>
                 )}
