@@ -81,13 +81,31 @@ export default function ChatPage() {
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`px-4 py-3 max-w-[75%] rounded-2xl shadow ${
-                  msg.role === "user"
-                    ? "bg-[#fc9e4f] text-white self-end"
-                    : "bg-white/95 text-[#020122] self-start"
+                className={`flex items-start gap-2 ${
+                  msg.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
+                {/* Show Phoenix icon only for AI */}
+                {msg.role === "ai" && (
+                  <Image
+                    src="/phoenix.png"
+                    alt="PhoenixAI"
+                    width={28}
+                    height={28}
+                    className="rounded-full shadow-md"
+                  />
+                )}
+            
+                {/* Chat bubble */}
+                <div
+                  className={`px-4 py-3 max-w-[75%] rounded-2xl shadow ${
+                    msg.role === "user"
+                      ? "bg-[#fc9e4f] text-white self-end"
+                      : "bg-white/95 text-[#020122] self-start"
+                  }`}
+                >
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                </div>
               </div>
             ))}
             {loading && (
