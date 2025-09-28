@@ -2,44 +2,44 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
-      {/* Hero Section */}
-      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg text-center flex flex-col items-center">
-        {/* Brand + Logo */}
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4">
-          Phishing Phighters
-        </h1>
-        <div className="relative w-32 h-32 mb-6">
-          <Image
-            src="/phish.png" // your Phishy logo
-            alt="Phishy the Fish Logo"
-            fill
-            className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
-            priority
-          />
-        </div>
+    <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg flex flex-col items-center">
+      {/* Title (left-aligned) */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4 self-start">
+        Phishing Phighters
+      </h1>
+    
+      {/* Logo */}
+      <div className="relative w-32 h-32 mb-6">
+        <Image
+          src="/phish.png"
+          alt="Phishy the Fish Logo"
+          fill
+          className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
+          priority
+        />
+      </div>
+    
+      {/* Tagline + Buttons (centered) */}
+      <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl text-center">
+        Swim Smarter, Click Safer
+      </p>
+    
+      <div className="mt-6 flex justify-center gap-4">
+        <a
+          href="/chat"
+          className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+        >
+          Start Learning
+        </a>
+        <a
+          href="/about"
+          className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
+        >
+          Add Extension
+        </a>
+      </div>
+    </header>
 
-        {/* Tagline + Buttons */}
-        <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
-          Swim Smarter, Click Safer — Let Phishy guide you to spot scams and
-          fight misinformation!
-        </p>
-
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="/chat"
-            className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
-          >
-            Start Learning
-          </a>
-          <a
-            href="/about"
-            className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
-          >
-            Add Extension
-          </a>
-        </div>
-      </header>
 
       {/* Rest of the page */}
       <main className="flex-1 px-6 sm:px-20 py-16 space-y-16">
@@ -48,6 +48,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[#edd382] mb-8 text-center">
             Interactive Learning Modules
           </h2>
+          <p className="text-center text-[#f2f3ae]/90 mb-8">
+            Let Phishy guide you to spot scams and fight misinformation!
+          </p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Phishing Basics */}
             <div className="bg-[#edd382] text-[#020122] p-6 rounded-2xl shadow-lg hover:scale-105 transition">
