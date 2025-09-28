@@ -95,8 +95,8 @@ export default function ChatPage() {
                 {msg.role === "ai" && (
                   <div className="w-8 h-8 rounded-full bg-[#020122] shadow-md overflow-hidden flex items-center justify-center">
                     <Image
-                      src="/phoenix.png"
-                      alt="PhoenixAI"
+                      src="/phish.png"
+                      alt="Phish Logo"
                       width={40}
                       height={40}
                       className="object-cover object-top"
