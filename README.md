@@ -40,7 +40,7 @@ Together, they create a hands-on safety experience: **learn, test, and defend yo
 - Best practices for maintaining conversation context in **LLM-powered chatbots**.  
 
 ## What's next for Phishy Phighters  
-- Expand extension support to **Twitter/X, Facebook, YouTube, and news sites**.  
+- Expand extension support to **Twitter/X, Facebook, YouTube**.  
 - Add **UI spoof detection** and more phishing indicators.  
 - Improve chatbot with **adaptive learning paths** and personalized feedback.  
 - Combining extension + chatbot for one seamless experience.  
