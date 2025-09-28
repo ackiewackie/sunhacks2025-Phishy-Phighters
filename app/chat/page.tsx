@@ -1,126 +1,200 @@
-import Link from "next/link";
+"use client";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
-export default function PhishingBasics() {
+export default function ChatPage() {
+  const [messages, setMessages] = useState<{ role: string; text: string }[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const chatRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMessages([
+      {
+        role: "ai",
+        text: "👋 Hi, I’m PhoenixAI! I can help you learn about phishing, misinformation, and safe browsing. What would you like to know?",
+      },
+    ]);
+  }, []);
+
+  useEffect(() => {
+    chatRef.current?.scrollTo({
+      top: chatRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages, loading]);
+
+  // ✅ Updated sendMessage with full history
+  const sendMessage = async () => {
+    if (!input.trim()) return;
+
+    const newMessages = [...messages, { role: "user", text: input }];
+    setMessages(newMessages);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }), // send full history
+      });
+
+      const data = await res.json();
+      if (data.reply) {
+        setMessages((prev) => [...prev, { role: "ai", text: data.reply }]);
+      }
+    } catch (err) {
+      console.error("Chat error:", err);
+      setMessages((prev) => [
+        ...prev,
+        { role: "ai", text: "⚠️ Oops, something went wrong. Try again!" },
+      ]);
+    }
+
+    setInput("");
+    setLoading(false);
+  };
+
   return (
-    <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
-      {/* Hero */}
-      <header className="text-center py-16 px-6 bg-gradient-to-r from-[#ff521b] to-[#fc9e4f] shadow-lg rounded-b-3xl">
-        <h1 className="text-4xl sm:text-5xl font-bold text-[#f2f3ae]">
-          Phishing Basics
+    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center">
+      {/* Header */}
+      <div className="w-full max-w-6xl flex items-center justify-center gap-3 py-4">
+        <Image
+          src="/phoenix.png"
+          alt="PhoenixAI Logo"
+          width={60}
+          height={60}
+          className="drop-shadow-lg"
+        />
+        <h1 className="text-2xl font-extrabold text-[#f2f3ae] tracking-wide">
+          PhoenixAI Chat
         </h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto text-[#f2f3ae]/90">
-          Learn how to recognize and defend against one of the most common
-          online threats: phishing.
-        </p>
-      </header>
+      </div>
 
-      {/* Main */}
-      <main className="flex-1 px-6 sm:px-20 py-12 space-y-12">
-        {/* Content */}
-        <section>
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">🔎 What is Phishing?</h2>
-          <p className="text-[#f2f3ae]/90 leading-relaxed">
-            Phishing is a type of cyberattack where attackers impersonate trusted
-            organizations to trick people into revealing sensitive information
-            like passwords, credit card numbers, or personal data. These attacks
-            usually come in the form of emails, fake websites, or text messages.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">📧 Common Examples</h2>
-          <ul className="list-disc list-inside space-y-2 text-[#f2f3ae]/90">
-            <li>Emails claiming your account will be locked unless you act immediately.</li>
-            <li>Fake login pages that mimic trusted websites.</li>
-            <li>Messages offering fake prizes or urgent requests.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">🚩 Red Flags to Watch For</h2>
-          <ul className="list-disc list-inside space-y-2 text-[#f2f3ae]/90">
-            <li>Misspelled domain names or sender addresses.</li>
-            <li>Urgency, unexpected attachments, or requests for personal info.</li>
-            <li>Generic greetings instead of your real name.</li>
-          </ul>
-        </section>
-
-        {/* RESOURCES */}
-        <section>
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">📚 Resources</h2>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            {/* Resource card (download) */}
-            <div className="bg-[#f2f3ae] text-[#020122] p-6 rounded-2xl shadow-lg">
-              <h3 className="font-bold text-lg mb-2">Download: Phishing Quick Guide (PDF)</h3>
-              <p className="text-sm mb-4 text-[#020122]/80">
-                A concise one-page summary of phishing red flags & protection steps — great for training and handouts.
-              </p>
-
-              {/* Link to the PDF in public/modules/phishing/ */}
-              <a
-                href="/modules/phishing/resource.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#ff521b] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#fc9e4f] transition"
-              >
-                Open / Download PDF
-              </a>
-
-              <p className="mt-3 text-xs text-[#020122]/70">
-                Tip: Put the file at <code className="bg-black/[.05] px-1 rounded">public/modules/phishing/resource.pdf</code> in your repo.
-              </p>
-            </div>
-
-            {/* Embedded preview (if PDF exists) */}
-            <div className="bg-[#020122] text-[#f2f3ae] p-4 rounded-2xl shadow-lg">
-              <h3 className="font-bold text-lg mb-2">Preview</h3>
-              <p className="text-sm mb-3 text-[#f2f3ae]/80">
-                If `resource.pdf` is present, a preview will render below. Otherwise the area shows a placeholder link.
-              </p>
-
-              {/* PDF embed (falls back to link if browser can't render) */}
-              <div className="h-[220px] bg-white/5 rounded overflow-hidden">
-                <object
-                  data="/modules/phishing/resource.pdf"
-                  type="application/pdf"
-                  className="w-full h-full"
-                >
-                  <div className="p-6 text-sm text-[#f2f3ae]/80">
-                    No preview available —{" "}
-                    <a
-                      href="/modules/phishing/resource.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#ff521b] hover:underline"
-                    >
-                      open the PDF
-                    </a>
-                    .
-                  </div>
-                </object>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="text-center mt-6">
-          <p className="text-lg text-[#f2f3ae]/90 mb-4">Ready to test your knowledge?</p>
-          <Link
-            href="/quiz"
-            className="bg-[#ff521b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#fc9e4f] transition"
+      {/* Main content: chat + sidebar */}
+      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-6 px-4 pb-6 flex-1">
+        {/* Chat Section */}
+        <div className="flex-1 flex flex-col bg-[#edd382] text-[#020122] rounded-xl shadow-lg overflow-hidden">
+          <div
+            ref={chatRef}
+            className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto"
           >
-            Take the Phishing Quiz →
-          </Link>
-        </section>
-      </main>
+            {messages.map((msg, i) => (
+              <div
+                key={i}
+                className={`flex items-start gap-2 ${
+                  msg.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                {/* Phoenix avatar for AI */}
+                {msg.role === "ai" && (
+                  <div className="w-8 h-8 rounded-full bg-[#020122] shadow-md overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/phoenix.png"
+                      alt="PhoenixAI"
+                      width={40}
+                      height={40}
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
 
-      {/* Footer */}
-      <footer className="bg-[#020122] border-t border-[#edd382]/30 py-6 text-center text-sm text-[#edd382]">
-        <p>© 2025 PhoenixAI — Built at SunHacks</p>
-      </footer>
+                {/* Chat bubble */}
+                <div
+                  className={`px-4 py-3 max-w-[75%] rounded-2xl shadow ${
+                    msg.role === "user"
+                      ? "bg-[#fc9e4f] text-white self-end"
+                      : "bg-white/95 text-[#020122] self-start"
+                  }`}
+                >
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                </div>
+              </div>
+            ))}
+            {loading && (
+              <div className="italic text-sm text-gray-700 self-start">
+                Thinking...
+              </div>
+            )}
+          </div>
+
+          {/* Input bar */}
+          <div className="p-3 bg-[#f2f3ae] flex gap-2 items-center">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              className="flex-1 px-4 py-2 rounded-lg bg-white text-[#020122] focus:outline-none"
+              placeholder="Ask me about phishing, misinformation, or safe browsing..."
+            />
+            <button
+              onClick={sendMessage}
+              disabled={loading}
+              className="bg-[#ff521b] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#fc9e4f] transition disabled:opacity-50 shadow"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+
+        {/* Sidebar */}
+        <aside className="md:w-64 bg-white/10 p-4 rounded-xl shadow-lg flex flex-col gap-4">
+          <h2 className="text-lg font-semibold text-[#f2f3ae]">⚡ Quick Tips</h2>
+          <ul className="list-disc list-inside text-sm text-gray-200 space-y-2">
+            <li>Check URLs carefully before clicking.</li>
+            <li>Look for spelling/grammar mistakes in emails.</li>
+            <li>Never share personal info via unsolicited messages.</li>
+          </ul>
+
+          <h2 className="text-lg font-semibold text-[#f2f3ae] mt-4">📚 Resources</h2>
+          <ul className="text-sm space-y-2">
+            <li>
+              <a
+                href="/modules/phishing"
+                className="text-[#fc9e4f] hover:underline"
+              >
+                Phishing Basics Module
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://staysafeonline.org"
+                target="_blank"
+                className="text-[#fc9e4f] hover:underline"
+              >
+                Stay Safe Online
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.consumer.ftc.gov/features/scam-alerts"
+                target="_blank"
+                className="text-[#fc9e4f] hover:underline"
+              >
+                FTC Scam Alerts
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.phishing.org"
+                target="_blank"
+                className="text-[#fc9e4f] hover:underline"
+              >
+                Phishing.org
+              </a>
+            </li>
+          </ul>
+
+          <Link
+            href="/"
+            className="mt-auto text-center bg-[#ff521b] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#fc9e4f] transition"
+          >
+            ⬅ Back to Home
+          </Link>
+        </aside>
+      </div>
     </div>
   );
 }
