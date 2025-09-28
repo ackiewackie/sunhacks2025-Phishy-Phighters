@@ -52,7 +52,13 @@ export default function ChatPage() {
                 : "bg-white/90 text-[#020122] self-start"
             }`}
           >
-            {msg.text}   
+            {msg.role === "ai" ? (
+              <ReactMarkdown className="prose prose-sm max-w-none">
+                {msg.text}
+              </ReactMarkdown>
+            ) : (
+              msg.text
+            )}
           </div>
         ))}
         {loading && (
