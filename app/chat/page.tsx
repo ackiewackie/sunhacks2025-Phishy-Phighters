@@ -12,7 +12,7 @@ export default function ChatPage() {
     setMessages([
       {
         role: "ai",
-        text: "👋 Hi, I’m PhoenixAI! I can help you learn about phishing, misinformation, and safe browsing. What would you like to know?",
+        text: "Hello, I’m PhoenixAI! Let's test your knowledge about phishing, misinformation, and safe browsing. Which would you like to start with?",
       },
     ]);
   }, []);
