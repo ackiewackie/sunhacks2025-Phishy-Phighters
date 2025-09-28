@@ -67,7 +67,7 @@ export default function AboutPage() {
             phishermen.
           </p>
           <a
-            href="https://chromewebstore.google.com/" // replace with actual extension link
+            href="https://github.com/ackiewackie/sunhacks2025-Phishy-Phighters" // extension folderrrr
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-[#fc9e4f] transition"
