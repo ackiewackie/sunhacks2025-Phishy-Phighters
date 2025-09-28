@@ -26,7 +26,7 @@ export default function PhishingBasics() {
       </header>
 
       {/* Hero Section */}
-      <div className="text-center py-16 px-6 bg-[#020122]">
+      <div className="text-center py-12 px-6 bg-[#020122]">
         <h1 className="text-4xl sm:text-5xl font-bold text-[#f2f3ae]">
           Phishing Basics
         </h1>
