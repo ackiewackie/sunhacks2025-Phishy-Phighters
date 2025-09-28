@@ -28,8 +28,7 @@ export default function Home() {
         {/* Gradient Tagline Section */}
         <div className="w-full bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-16 px-6 rounded-b-3xl shadow-lg">
           <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
-            Swim Smarter, Click Safer — Learn how to outsmart scammers with
-            Phishy as your guide!
+            Swim Smarter, Click Safer
           </p>
 
           <div className="mt-8 flex justify-center gap-4">
@@ -100,7 +99,7 @@ export default function Home() {
               href="/quiz"
               className="bg-[#ff521b] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#fc9e4f] transition"
             >
-              Quiz with Phishy
+              Learn with Phishy
             </a>
           </div>
         </section>
@@ -108,7 +107,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#020122] border-t border-[#edd382]/30 py-6 text-center text-sm text-[#edd382]">
-        <p>© 2025 Phishing Phighters — Guided by Phishy 🐟</p>
+        <p>Phishing Phighters - Swim in a School of Phishes!</p>
       </footer>
     </div>
   );
