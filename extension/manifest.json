@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "true anti-scary extensionsies hehe",
+  "name": "Phishy Waters",
   "version": "1.0",
-  "description": "A simple extension to enable/disable multiple features.",
+  "description": "Let Phishy guide you online! He can scan links and fact-check misinformation in real time.",
   "permissions": [
     "storage",
     "activeTab",
@@ -11,15 +11,15 @@
   "action": {
     "default_popup": "popups/popup.html",
     "default_icon": {
-      "16": "images/phoenixguard_16.png",
-      "48": "images/phoenixguard_48.png",
-      "128": "images/phoenixguard_128.png"
+      "16": "images/phish.png",
+      "48": "images/phish.png",
+      "128": "images/phish.png"
     }
   },
   "icons": {
-      "16": "images/phoenixguard_16.png",
-      "48": "images/phoenixguard_48.png",
-      "128": "images/phoenixguard_128.png"
+      "16": "images/phish.png",
+      "48": "images/phish.png",
+      "128": "images/phish.png"
   },
   "content_scripts": [ 
 	{
@@ -32,6 +32,3 @@
         "https://safebrowsing.googleapis.com/*"    
     ]
 }
-
-
-    

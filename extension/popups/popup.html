@@ -1,22 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <title>Feature Control</title>
-  <link rel="stylesheet" href="popup.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phishy Waters Settings</title>
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-  <h1>Settings</h1>
-  <div class="feature">
-    <span>Phishing/Suspicious Links</span>
-    <label class="switch">
-      <input type="checkbox" id="feature_phising" class="toggle-switch">
-      <span class="slider"></span>
-    </label>
-  </div>
-  
-  <button id="scrapeButton"> Get Page Text</button>
-  <button id="getLinkButton"> Get Page Links</button>
+  <div class="popup-root">
+    <!-- Compact header / nav -->
+    <header class="popup-header" role="banner">
+      <div class="brand-row">
+        <img src="../images/phish.png" alt="Phishy the Fish" class="brand-logo" />
+        <div class="brand-texts">
+          <div class="brand-title">Phishy Waters</div>
+          <div class="brand-sub">Toggle Phishy's protection & learn as you browse</div>
+        </div>
+      </div>
+    </header>
 
-  <script type="module" src="popup.js"></script>
+    <!-- Content -->
+    <main class="popup-main" role="main">
+      <h2 class="section-title">Features</h2>
+      <div class="card">
+        <label class="feature-row">
+          <div class="feature-label">
+            <div class="feature-title">Let Phishy look at Text</div>
+            <div class="feature-desc">Allow Phishy to scrape page text for fact-checking.</div>
+          </div>
+          <input type="checkbox" id="scrapeButton" class="toggle-switch" />
+        </label>
+      </div>
+      
+      <div class="card">
+        <label class="feature-row">
+          <div class="feature-label">
+            <div class="feature-title">Let Phishy look at Links</div>
+            <div class="feature-desc">Allow Phishy to scan all links on the page for suspicious activity.</div>
+          </div>
+          <input type="checkbox" id="getLinkButton" class="toggle-switch" />
+        </label>
+      </div>
+
+      <!--<div class="controls">
+        <button id="scrapeButton" class="btn btn-primary">Get Page Text</button>
+        <button id="getLinkButton" class="btn btn-ghost">Get Page Links</button>
+      </div>-->
+
+      <footer class="popup-footer">
+        <small>Phishy Waters • <span class="muted">Works best on Reddit for now</span></small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
 </html>
