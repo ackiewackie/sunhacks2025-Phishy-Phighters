@@ -4,15 +4,15 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
-      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg">
-        {/* Title + Logo Row (Left Aligned) */}
-        <div className="flex items-center gap-4 mb-6">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide">
+      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
+        {/* Nav-style brand row */}
+        <div className="flex items-center gap-4 px-6 py-4">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f2f3ae] tracking-wide">
             Phishing Phighters
           </h1>
-          <div className="relative w-28 h-28">
+          <div className="relative w-20 h-20">
             <Image
-              src="/phish.png" // your Phishy logo
+              src="/phish.png"
               alt="Phishy the Fish Logo"
               fill
               className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
@@ -21,13 +21,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Tagline (Centered) */}
-        <div className="text-center">
+        {/* Tagline + Buttons (centered under brand row) */}
+        <div className="text-center px-6 py-10">
           <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
             Swim Smarter, Click Safer
           </p>
 
-          {/* Buttons (Centered) */}
           <div className="mt-6 flex justify-center gap-4">
             <a
               href="/chat"
@@ -53,7 +52,7 @@ export default function Home() {
             Interactive Learning Modules
           </h2>
           <p className="text-center text-[#f2f3ae]/90 mb-8">
-            — Let Phishy guide you to spot scams and fight misinformation!
+            Let Phishy guide you to spot scams and fight misinformation!
           </p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
