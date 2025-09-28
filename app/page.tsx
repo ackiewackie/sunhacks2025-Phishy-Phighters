@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
-      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg flex flex-col items-center">
-        {/* Title + Logo row */}
-        <div className="flex items-center justify-center gap-4 mb-6">
+      <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg">
+        {/* Title + Logo Row (Left Aligned) */}
+        <div className="flex items-center gap-4 mb-6">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide">
             Phishing Phighters
           </h1>
@@ -21,25 +21,27 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Tagline */}
-        <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl text-center">
-          Swim Smarter, Click Safer
-        </p>
+        {/* Tagline (Centered) */}
+        <div className="text-center">
+          <p className="text-2xl sm:text-3xl font-bold text-[#f2f3ae] max-w-2xl mx-auto">
+            Swim Smarter, Click Safer
+          </p>
 
-        {/* Buttons */}
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="/chat"
-            className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
-          >
-            Start Learning
-          </a>
-          <a
-            href="/about"
-            className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
-          >
-            Add Extension
-          </a>
+          {/* Buttons (Centered) */}
+          <div className="mt-6 flex justify-center gap-4">
+            <a
+              href="/chat"
+              className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
+            >
+              Start Learning
+            </a>
+            <a
+              href="/about"
+              className="bg-[#020122] text-[#f2f3ae] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#edd382] hover:text-[#020122] transition"
+            >
+              Add Extension
+            </a>
+          </div>
         </div>
       </header>
 
@@ -51,7 +53,7 @@ export default function Home() {
             Interactive Learning Modules
           </h2>
           <p className="text-center text-[#f2f3ae]/90 mb-8">
-            Let Phishy guide you to spot scams and fight misinformation!
+            — Let Phishy guide you to spot scams and fight misinformation!
           </p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
