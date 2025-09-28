@@ -12,7 +12,7 @@ export default function Home() {
           </h1>
           <div className="relative w-32 h-32">
             <Image
-              src="/phishy.png" // replace with your fish logo
+              src="/phish.png" // replace with your fish logo
               alt="Phishy the Fish Logo"
               fill
               className="object-contain drop-shadow-[0_0_12px_#ff521b]"
