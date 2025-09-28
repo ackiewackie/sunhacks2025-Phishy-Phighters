@@ -79,7 +79,7 @@ export default function ChatPage() {
         <div className="flex-1 flex flex-col bg-[#edd382] text-[#020122] rounded-xl shadow-lg overflow-hidden">
           <div
             ref={chatRef}
-            className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto"
+            className="flex-1 p-4 flex flex-col gap-3 overflow-y-auto max-h-[500px]" 
           >
             {messages.map((msg, i) => (
               <div
