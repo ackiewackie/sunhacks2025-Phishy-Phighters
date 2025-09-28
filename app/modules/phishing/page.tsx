@@ -39,11 +39,9 @@ export default function PhishingBasics() {
       {/* Content Section */}
       <main className="flex-1 px-6 sm:px-20 py-16 space-y-12">
         {/* What is phishing */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">
-            What is Phishing?
-          </h2>
-          <p className="text-[#f2f3ae]/90 leading-relaxed">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">What is Phishing?</h2>
+          <p className="leading-relaxed">
             Phishing is a type of cyberattack where attackers impersonate
             trusted organizations to trick people into revealing sensitive
             information like passwords, credit card numbers, or personal data.
@@ -53,29 +51,19 @@ export default function PhishingBasics() {
         </section>
 
         {/* Common examples */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">
-            Common Examples
-          </h2>
-          <ul className="list-disc list-inside space-y-2 text-[#f2f3ae]/90">
-            <li>
-              Emails claiming your account will be locked unless you act immediately.
-            </li>
-            <li>
-              Fake login pages that mimic trusted websites like banks or email providers.
-            </li>
-            <li>
-              Messages offering free prizes, gift cards, or urgent updates.
-            </li>
+        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">Common Examples</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Emails claiming your account will be locked unless you act immediately.</li>
+            <li>Fake login pages that mimic trusted websites like banks or email providers.</li>
+            <li>Messages offering free prizes, gift cards, or urgent updates.</li>
           </ul>
         </section>
 
         {/* Red flags */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">
-            Red Flags to Watch For
-          </h2>
-          <ul className="list-disc list-inside space-y-2 text-[#f2f3ae]/90">
+        <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">Red Flags to Watch For</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Misspelled domain names or sender addresses.</li>
             <li>Unusual urgency (“Act now or lose access!”).</li>
             <li>Unexpected attachments or suspicious links.</li>
@@ -84,11 +72,9 @@ export default function PhishingBasics() {
         </section>
 
         {/* How to protect yourself */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#edd382] mb-4">
-            How to Protect Yourself
-          </h2>
-          <ul className="list-disc list-inside space-y-2 text-[#f2f3ae]/90">
+        <section className="max-w-4xl mx-auto bg-[#f2f3ae] text-[#020122] rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">How to Protect Yourself</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Double-check the sender’s email address and URL.</li>
             <li>Hover over links before clicking to see where they lead.</li>
             <li>Enable multi-factor authentication on important accounts.</li>
@@ -97,7 +83,7 @@ export default function PhishingBasics() {
         </section>
 
         {/* Quiz Section */}
-        <section id="quiz">
+        <section id="quiz" className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#edd382] mb-8 text-center">
             Test Your Knowledge
           </h2>
