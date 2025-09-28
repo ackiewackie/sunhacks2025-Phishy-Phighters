@@ -9,26 +9,8 @@ export async function POST(req: Request) {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const result = await model.generateContent({
-      contents: [
-        {
-          role: "system",
-          parts: [
-            {
-              text: "You are PhoenixAI, a friendly assistant that teaches users about phishing, misinformation, and safe browsing. Be concise, interactive, and educational.",
-            },
-          ],
-        },
-        {
-          role: "user",
-          parts: [{ text: message }],
-        },
-      ],
-      generationConfig: {
-        maxOutputTokens: 500,
-        temperature: 0.7,
-      },
-    });
+    // 👇 Simplest usage (just pass a string)
+    const result = await model.generateContent(message);
 
     const reply =
       result.response.text() ||
@@ -36,7 +18,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply });
   } catch (err) {
-    console.error(err);
+    console.error("Gemini API error:", err);
     return NextResponse.json({ reply: "⚠️ Error talking to AI." });
   }
 }
