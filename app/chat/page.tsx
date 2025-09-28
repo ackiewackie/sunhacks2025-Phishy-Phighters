@@ -55,7 +55,7 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#020122] shadow-md">
+    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col items-center">
       {/* Header */}
       <div className="w-full max-w-6xl flex items-center justify-center gap-3 py-4">
         <Image
@@ -85,17 +85,19 @@ export default function ChatPage() {
                   msg.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                {/* Show Phoenix icon only for AI */}
+                {/* Phoenix avatar for AI */}
                 {msg.role === "ai" && (
-                  <Image
-                    src="/phoenix.png"
-                    alt="PhoenixAI"
-                    width={28}
-                    height={28}
-                    className="rounded-full shadow-md"
-                  />
+                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#020122] shadow-md">
+                    <Image
+                      src="/phoenix.png"
+                      alt="PhoenixAI"
+                      width={20}
+                      height={20}
+                      className="rounded-full"
+                    />
+                  </div>
                 )}
-            
+
                 {/* Chat bubble */}
                 <div
                   className={`px-4 py-3 max-w-[75%] rounded-2xl shadow ${
