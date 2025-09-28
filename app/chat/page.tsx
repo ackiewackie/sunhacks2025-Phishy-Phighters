@@ -4,11 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-export const metadata = {
-  title: "Phishy Phighters",
-  description: "Learn about Phishy Phighters, your guide to safe browsing.",
-};
-
 export default function ChatPage() {
   const [messages, setMessages] = useState<{ role: string; text: string }[]>([]);
   const [input, setInput] = useState("");
