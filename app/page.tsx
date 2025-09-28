@@ -31,7 +31,7 @@ export default function Home() {
             Start Learning
           </a>
           <a
-            href="/quiz"
+            href="/chat"
             className="bg-[#f2f3ae] text-[#020122] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#edd382] transition"
           >
             Take a Quiz
