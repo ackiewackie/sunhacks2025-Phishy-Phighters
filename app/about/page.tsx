@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col">
+    <div className="font-sans min-h-screen bg-gradient-to-b from-[#020122] to-[#1a1a40] text-white flex flex-col">
       {/* Header */}
       <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] rounded-b-3xl shadow-lg">
         <Link href="/" className="block cursor-pointer">
