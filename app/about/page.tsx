@@ -8,12 +8,21 @@ export default function AboutPage() {
       {/* Header */}
       <Link href="/" className="max-w-4xl text-center mb-12 block cursor-pointer">
         <Image
-          src="/phish.png"
-          alt="Phishy the Fish Logo"
+          src="/phoenix.png"
+          alt="PhoenixGuard Logo"
           width={80}
           height={80}
           className="mx-auto drop-shadow-lg"
         />
+        <h1 className="text-4xl font-extrabold text-[#f2f3ae] mt-4 hover:underline">
+          PhoenixGuard
+        </h1>
+        <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
+          Keeping you safe online by teaching, detecting, and providing resources
+          against misinformation and phishing threats.
+        </p>
+      </Link>
+      
         <h1 className="text-4xl font-extrabold text-[#f2f3ae] mt-4 hover:underline">
           Phishy Waters
         </h1>
@@ -21,7 +30,6 @@ export default function AboutPage() {
           Helping you spot misinformation and phishing attempts in real time —
           while teaching you how to stay safe online.
         </p>
-      </Link>
 
       {/* How it works */}
       <div className="max-w-4xl bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-8 space-y-6 mb-12">
