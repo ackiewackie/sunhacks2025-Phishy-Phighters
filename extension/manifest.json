@@ -11,9 +11,9 @@
   "action": {
     "default_popup": "popups/popup.html",
     "default_icon": {
-      "16": "images/phish.png",
-      "48": "images/phish.png",
-      "128": "images/phish.png"
+      "16": "images/phish_16.png",
+      "48": "images/phish_48.png",
+      "128": "images/phish_128.png"
     }
   },
   "icons": {
