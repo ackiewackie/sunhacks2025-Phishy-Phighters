@@ -31,13 +31,12 @@ export default function AboutPage() {
           Phishy Waters
         </h1>
         <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-          Helping you spot misinformation and phishing attempts in real time
-          while teaching you how to swim safe online.
+          Helping you spot danger and swim safer online.
         </p>
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 px-6 sm:px-20 py-16 space-y-16">
+      <main className=" text-centerflex-1 px-6 sm:px-20 py-16 space-y-16">
         {/* What it does */}
         <section className="max-w-4xl mx-auto bg-[#edd382] text-[#020122] rounded-3xl shadow-lg p-10 space-y-6">
           <h2 className="text-3xl font-bold">What Does It Do?</h2>
