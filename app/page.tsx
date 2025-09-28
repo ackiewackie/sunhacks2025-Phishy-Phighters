@@ -5,20 +5,20 @@ export default function Home() {
     <div className="font-sans min-h-screen bg-[#020122] text-white flex flex-col">
       {/* Hero Section */}
       <header className="bg-gradient-to-b from-[#ff521b] to-[#fc9e4f] py-12 px-6 rounded-b-3xl shadow-lg flex flex-col items-center">
-        {/* Title (left-aligned) */}
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide mb-4 self-start">
-          Phishing Phighters
-        </h1>
-
-        {/* Logo */}
-        <div className="relative w-32 h-32 mb-6">
-          <Image
-            src="/phish.png" // your Phishy logo
-            alt="Phishy the Fish Logo"
-            fill
-            className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
-            priority
-          />
+        {/* Title + Logo row */}
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f2f3ae] tracking-wide">
+            Phishing Phighters
+          </h1>
+          <div className="relative w-28 h-28">
+            <Image
+              src="/phish.png" // your Phishy logo
+              alt="Phishy the Fish Logo"
+              fill
+              className="object-contain drop-shadow-[0_4px_16px_rgba(2,1,34,0.8)]"
+              priority
+            />
+          </div>
         </div>
 
         {/* Tagline */}
@@ -51,7 +51,7 @@ export default function Home() {
             Interactive Learning Modules
           </h2>
           <p className="text-center text-[#f2f3ae]/90 mb-8">
-            — Let Phishy guide you to spot scams and fight misinformation!
+            Let Phishy guide you to spot scams and fight misinformation!
           </p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
