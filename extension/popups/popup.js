@@ -29,7 +29,7 @@ async function search(q) {
     return;
   }
   try {
-    const API_KEY = "AIzaSyAJydyhjVDgJzGEjOxXFPCeBUKJVhunVLQ"; // !!! IMPORTANT: Add your key here
+    const API_KEY = ""; // !!! IMPORTANT: Add your key here
     const params = { languageCode: 'en', key: API_KEY, query: q };
     const baseUrl = 'https://factchecktools.googleapis.com/v1alpha1/claims:search';
     const queryParams = new URLSearchParams(params);
